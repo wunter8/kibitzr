@@ -22,7 +22,7 @@ def cleanup():
     for key in ('headless', 'headed'):
         if FIREFOX_INSTANCE[key] is not None:
             if FIREFOX_INSTANCE[key]['profile']:
-                temp_dirs.append(FIREFOX_INSTANCE[key]['profile'].profile_dir)
+                temp_dirs.append(FIREFOX_INSTANCE[key]['profile'].path)
             try:
                 FIREFOX_INSTANCE[key]['webdriver'].quit()
                 FIREFOX_INSTANCE[key] = None
