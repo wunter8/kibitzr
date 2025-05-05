@@ -36,7 +36,7 @@ def get_requirements(locked: bool):
 
 setup(
     name='kibitzr',
-    version='7.0.11',
+    version='8.0.1',
     description="Self hosted web page changes monitoring",
     long_description=readme + '\n\n' + history,
     author="Peter Demin",
@@ -62,11 +62,13 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
     ],
-    python_requires='>=3.8',
+    python_requires='>=3.9',
     test_suite='tests',
     install_requires=get_requirements(locked=False),
     extras_require={
