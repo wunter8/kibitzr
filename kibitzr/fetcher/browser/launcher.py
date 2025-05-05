@@ -42,19 +42,16 @@ def firefox(headless=True):
     """
     from selenium import webdriver  # pylint: disable=import-outside-toplevel
     from selenium.webdriver.firefox.options import Options  # pylint: disable=import-outside-toplevel
+    firefox_options = Options()
     if headless:
         driver_key = 'headless'
-        firefox_options = Options()
         firefox_options.add_argument('-headless')
     else:
         driver_key = 'headed'
-        firefox_options = None
     # Load profile, if it exists:
     if os.path.isdir(PROFILE_DIR):
         firefox_profile = webdriver.FirefoxProfile(PROFILE_DIR)
-
-        if firefox_options:
-            firefox_options.profile = firefox_profile
+        firefox_options.profile = firefox_profile
     else:
         firefox_profile = None
     if FIREFOX_INSTANCE[driver_key] is None:
